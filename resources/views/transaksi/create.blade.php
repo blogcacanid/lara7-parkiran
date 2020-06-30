@@ -26,10 +26,10 @@
                         <div class="form-group">
                             <label for="id_konsumen">Name Konsumen:</label>
                             <select name="id_konsumen" class="form-control"style="width:250px">
-                            <option value="">--Pilih Konsumen--</option>
-                            @foreach ($konsumens as $data_konsumen)
-                                <option value="{{ $data_konsumen->id_konsumen }}">{{ $data_konsumen->nama_konsumen}}</option>
-                            @endforeach
+                                <option value="">--Pilih Konsumen--</option>
+                                @foreach ($konsumens as $data_konsumen)
+                                    <option value="{{ $data_konsumen->id_konsumen }}">{{ $data_konsumen->nama_konsumen}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">

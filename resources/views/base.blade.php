@@ -32,6 +32,9 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('konsumen.list')}}" class="nav-link">Konsumen</a>
                         </li>
                         <li class="nav-item">

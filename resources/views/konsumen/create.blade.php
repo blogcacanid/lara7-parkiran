@@ -2,7 +2,7 @@
 @section('main')
 <div class='container py-4'>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-header"><i class="fas fa-plus-circle"></i>&nbsp;Add Record</div>
                 <div class="card-body" style="font-style: Calibri;font-size:13px">
