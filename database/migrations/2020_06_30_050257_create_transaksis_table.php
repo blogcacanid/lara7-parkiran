@@ -15,6 +15,7 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->increments('id_transaksi');
+            $table->nt('id_konsumen');
             $table->date('tgl_transaksi');
             $table->time('waktu_masuk');
             $table->time('waktu_keluar')->nullable();
