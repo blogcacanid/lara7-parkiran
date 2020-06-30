@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="card">
-                <div class="card-header"><i class="fas fa-edit"></i>&nbsp;Edit Record</div>
+                <div class="card-header"><i class="fas fa-edit"></i>&nbsp;Edit Record - Konsumen</div>
                 <div class="card-body" style="font-style: Calibri;font-size:13px">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -25,11 +25,10 @@
                         </div>
                         <div class="form-group">
                             <label for="jenis_kendaraan">Jenis Kendaraan:</label>
-                            <input type="text" class="form-control" name="jenis_kendaraan" value="{{ $data['jenis_kendaraan'] }}" />
-                            <select name="jenis_kendaraan" class="form-control"style="width:250px">
+                            <select name="jenis_kendaraan" class="form-control">
                                 <option value="">--Pilih Jenis Kendaraan--</option>
-                                <option value="Mobil">Mobil</option>
-                                <option value="Motor">Motor</option>
+                                <option value="Mobil" {{ $data['jenis_kendaraan'] == 'Mobil'  ? 'selected' : '' }}>Mobil</option>
+                                <option value="Motor" {{ $data['jenis_kendaraan'] == 'Motor'  ? 'selected' : '' }}>Motor</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -42,7 +41,11 @@
                         </div>
                         <div class="form-group">
                             <label for="kelamin">Kelamin:</label>
-                            <input type="text" class="form-control" name="kelamin" value="{{ $data['kelamin'] }}" />
+                            <select name="kelamin" class="form-control">
+                                <option value="">--Pilih Jenis Kelamin--</option>
+                                <option value="L" {{ $data['kelamin'] == 'L'  ? 'selected' : '' }}>L</option>
+                                <option value="P" {{ $data['kelamin'] == 'P'  ? 'selected' : '' }}>P</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="no_hp">No. Handphone:</label>

@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="card">
-                <div class="card-header"><i class="fas fa-plus-circle"></i>&nbsp;Add Record</div>
+                <div class="card-header"><i class="fas fa-plus-circle"></i>&nbsp;Add Record - Konsumen</div>
                 <div class="card-body" style="font-style: Calibri;font-size:13px">
                     @if ($errors->any())
                         <div class="alert alert-danger">

@@ -82,6 +82,18 @@ class TransaksiController extends Controller
     public function edit($id)
     {
         //
+        $konsumens = Konsumen::all();
+        $data = Transaksi::find($id);
+        //$datas = DB::table('transaksi')
+        //    ->join('konsumen', 'konsumen.id_konsumen', '=', 'transaksi.id_konsumen')
+        //    ->select('transaksi.id_transaksi','konsumen.nama_konsumen',
+        //        'transaksi.tgl_transaksi','transaksi.waktu_masuk','transaksi.waktu_keluar',
+        //        'transaksi.biaya')
+        //    ->where('transaksi.id_transaksi', '=', $id);
+            //->first();
+            //->find($id);
+        //$data = json_encode($data);            
+        return view('transaksi.edit', compact('data','konsumens'));        
     }
 
     /**
@@ -94,6 +106,17 @@ class TransaksiController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'nip'           => 'required',
+            'nama_transaksi'  => 'required',
+            'alamat'        => 'required'
+        ]);
+        $data = Transaksi::find($id);
+        $data->nip          = $request->get('nip');
+        $data->nama_transaksi = $request->get('nama_transaksi');
+        $data->alamat       = $request->get('alamat');
+        $data->save();
+        return redirect('/transaksi')->with('success', 'Record updated!');
     }
 
     /**
