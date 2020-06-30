@@ -35,7 +35,7 @@
                         <td>{{$data->nama_konsumen}}</td>
                         <td>{{$data->jenis_kendaraan}}</td>
                         <td>{{$data->no_polisi}}</td>
-                        <td>{{$data->tgl_lahir}}</td>
+                        <td>{{ date('d M Y', strtotime($data->tgl_lahir)) }}</td>
                         <td>{{$data->no_hp}}</td>
                     </tr>
                     @endforeach

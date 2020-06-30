@@ -19,7 +19,7 @@ class TransaksiController extends Controller
         //
         $transaksis = DB::table('transaksi')
             ->join('konsumen', 'konsumen.id_konsumen', '=', 'transaksi.id_konsumen')
-            ->select('transaksi.id_transaksi','konsumen.nama_konsumen',
+            ->select('transaksi.id_transaksi','konsumen.nama_konsumen','konsumen.no_polisi',
                 'transaksi.tgl_transaksi','transaksi.waktu_masuk','transaksi.waktu_keluar',
                 'transaksi.biaya')
             ->paginate(5);

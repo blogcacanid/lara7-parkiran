@@ -19,6 +19,7 @@
                   <th width="90">Actions</th>
                   <th>Tgl. Transaksi</th>
                   <th>Konsumen</th>
+                  <th>No. Polisi</th>
                   <th>Waktu Masuk</th>
                   <th>Waktu Keluar</th>
                   <th>Biaya</th>
@@ -34,6 +35,7 @@
                         </td>
                         <td>{{$data->tgl_transaksi}}</td>
                         <td>{{$data->nama_konsumen}}</td>
+                        <td>{{$data->no_polisi}}</td>
                         <td>{{$data->waktu_masuk}}</td>
                         <td>{{$data->waktu_keluar}}</td>
                         <td>{{$data->biaya}}</td>
