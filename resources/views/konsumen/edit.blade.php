@@ -26,6 +26,11 @@
                         <div class="form-group">
                             <label for="jenis_kendaraan">Jenis Kendaraan:</label>
                             <input type="text" class="form-control" name="jenis_kendaraan" value="{{ $data['jenis_kendaraan'] }}" />
+                            <select name="jenis_kendaraan" class="form-control"style="width:250px">
+                                <option value="">--Pilih Jenis Kendaraan--</option>
+                                <option value="Mobil">Mobil</option>
+                                <option value="Motor">Motor</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="no_polisi">No. Polisi:</label>

@@ -11,14 +11,16 @@ class Transaksi extends Model
     protected $primaryKey = 'id_transaksi';
     protected $fillable = [
         'tgl_transaksi',
+        'id_konsumen',
         'waktu_masuk',
         'waktu_masuk',
         'biaya'       
     ];
 
-    public function transaksi()
+    public function konsumen()
     {
-        return $this->belongsTo(Konsumen::class);
+        //return $this->belongsTo('App\Konsumen');
+        return $this->belongsTo('Konsumen::class');
     }
 
 }

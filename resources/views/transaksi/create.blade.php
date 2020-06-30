@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label for="waktu_masuk">Waktu Masuk:</label>
-                            <input type="text" class="form-control" name="waktu_masuk" value="{{ date('H:i:s') }}" disabled="" />
+                            <input type="text" class="form-control" name="waktu_masuk" value="{{ date('H:i:s') }}" />
                         </div>
                         <a href="{{ route('transaksi.list')}}" class="btn btn-secondary btn-sm" title="Back"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;Back</a>&nbsp;
                         <button type="submit" class="btn btn-success btn-sm" title="Save now"><i class="fas fa-save"></i>&nbsp;Save</button>

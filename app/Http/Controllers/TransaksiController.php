@@ -16,6 +16,7 @@ class TransaksiController extends Controller
     public function index()
     {
         //
+        //$transaksis = Transaksi::with(['konsumen']);
         $transaksis = Transaksi::paginate(5);
         return view('transaksi.list', compact('transaksis'));
     }
@@ -41,6 +42,19 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'tgl_transaksi' => 'required',
+            'id_konsumen'   => 'required',
+            'waktu_masuk'   => 'required'
+        ]);
+
+        $data = new Transaksi([
+            'tgl_transaksi' => $request->get('tgl_transaksi'),
+            'id_konsumen'   => $request->get('id_konsumen'),
+            'waktu_masuk'   => $request->get('waktu_masuk')
+        ]);
+        $data->save();
+        return redirect('/transaksi')->with('success', 'Transaksi saved!');
     }
 
     /**

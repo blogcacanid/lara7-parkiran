@@ -20,7 +20,8 @@ class Konsumen extends Model
 
     public function transaksi()
     {
-        return $this->hasMany(Transaksi::class);
+        //return $this->hasMany('App\Transaksi');
+        return $this->hasMany('Transaksi::class');
     }
 
 }

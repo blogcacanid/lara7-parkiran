@@ -33,7 +33,7 @@
                             <a href="{{ route('transaksi.delete', $data-> id_transaksi)}}" title="Delete"><span style="font-size: 1em; color: Tomato;"><i class="fas fa-trash"></span></i></a>
                         </td>
                         <td>{{$data->tgl_transaksi}}</td>
-                        <td>{{$data->id_konsumen}}</td>
+                        <td>{{$data->konsumen->nama_konsumen}}</td>
                         <td>{{$data->waktu_masuk}}</td>
                         <td>{{$data->waktu_keluar}}</td>
                         <td>{{$data->waktu_biaya}}</td>
