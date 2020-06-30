@@ -107,14 +107,12 @@ class TransaksiController extends Controller
     {
         //
         $request->validate([
-            'nip'           => 'required',
-            'nama_transaksi'  => 'required',
-            'alamat'        => 'required'
+            'waktu_keluar'  => 'required',
+            'biaya'         => 'required'
         ]);
         $data = Transaksi::find($id);
-        $data->nip          = $request->get('nip');
-        $data->nama_transaksi = $request->get('nama_transaksi');
-        $data->alamat       = $request->get('alamat');
+        $data->waktu_keluar = $request->get('waktu_keluar');
+        $data->biaya        = $request->get('biaya');
         $data->save();
         return redirect('/transaksi')->with('success', 'Record updated!');
     }

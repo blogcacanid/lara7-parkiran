@@ -18,8 +18,8 @@ class CreateTransaksisTable extends Migration
             $table->integer('id_konsumen')->unsigned();
             $table->foreign('id_konsumen')->references('id_konsumen')->on('konsumen')->onDelete('cascade');
             $table->date('tgl_transaksi');
-            $table->time('waktu_masuk');
-            $table->time('waktu_keluar')->nullable();
+            $table->datetime('waktu_masuk');
+            $table->datetime('waktu_keluar')->nullable();
             $table->integer('biaya')->nullable();
             $table->timestamps();
         });

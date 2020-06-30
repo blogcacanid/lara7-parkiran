@@ -36,8 +36,20 @@
                         <td>{{$data->tgl_transaksi}}</td>
                         <td>{{$data->nama_konsumen}}</td>
                         <td>{{$data->no_polisi}}</td>
-                        <td>{{$data->waktu_masuk}}</td>
-                        <td>{{$data->waktu_keluar}}</td>
+                        <td>{{date('H:i', strtotime($data->waktu_masuk))}}</td>
+                        <td>
+                            @php
+                            if ($data->waktu_keluar == '')
+                            {
+                                $waktu_Keluar = '';
+                            }
+                            else
+                            {
+                                $waktu_Keluar = date('H:i', strtotime($data->waktu_keluar));
+                            }
+                            @endphp
+                            {{$waktu_Keluar}}
+                        </td>
                         <td>{{$data->biaya}}</td>
                     </tr>
                     @endforeach
