@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Konsumen;
 use App\Transaksi;
 
 use Illuminate\Http\Request;
@@ -27,6 +28,8 @@ class TransaksiController extends Controller
     public function create()
     {
         //
+        $konsumens = Konsumen::all();
+        return view('transaksi.create', compact('konsumens'));
     }
 
     /**

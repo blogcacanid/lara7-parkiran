@@ -37,8 +37,12 @@ class KonsumenController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_konsumen'  => 'required',
-            'jenis_kendaraan' => 'required'
+            'nama_konsumen'     => 'required',
+            'jenis_kendaraan'   => 'required',
+            'no_polisi'         => 'required',
+            'tgl_lahir'         => 'required',
+            'kelamin'           => 'required',
+            'no_hp'             => 'required'
         ]);
         $data = new Konsumen([
             'nama_konsumen'     => $request->get('nama_konsumen'),
