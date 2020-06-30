@@ -10,9 +10,10 @@ class Transaksi extends Model
     public $table = 'transaksi';
     protected $primaryKey = 'id_transaksi';
     protected $fillable = [
-        'nip',
-        'nama_konsumen',
-        'alamat'       
+        'tgl_transaksi',
+        'waktu_masuk',
+        'waktu_masuk',
+        'biaya'       
     ];
 
     public function transaksi()

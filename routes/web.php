@@ -26,3 +26,14 @@ Route::get('konsumen-edit/{id?}', ['uses'=>'KonsumenController@edit', 'as'=>'kon
 // delete a product
 Route::get('konsumen-delete/{id?}', ['uses'=>'KonsumenController@delete', 'as'=>'konsumen.delete']);
 Route::get('konsumen-destroy/{id?}', ['uses'=>'KonsumenController@destroy', 'as'=>'konsumen.destroy']);
+
+Route::resource('transaksi', 'TransaksiController');
+// display konsume list
+Route::get('transaksi-list', ['uses'=>'TransaksiController@index', 'as'=>'transaksi.list']);
+Route::get('transaksi-add', ['uses'=>'TransaksiController@create', 'as'=>'transaksi.add']);
+Route::post('transaksi-post', ['uses'=>'TransaksiController@store', 'as'=>'transaksi.post']);
+Route::get('transaksi-edit/{id?}', ['uses'=>'TransaksiController@edit', 'as'=>'transaksi.edit']);
+
+// delete a product
+Route::get('transaksi-delete/{id?}', ['uses'=>'TransaksiController@delete', 'as'=>'transaksi.delete']);
+Route::get('transaksi-destroy/{id?}', ['uses'=>'TransaksiController@destroy', 'as'=>'transaksi.destroy']);

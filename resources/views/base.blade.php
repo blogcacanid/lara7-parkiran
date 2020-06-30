@@ -35,7 +35,7 @@
                             <a href="{{ route('konsumen.list')}}" class="nav-link">Konsumen</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('konsumen.list')}}" class="nav-link">Transaksi</a>
+                            <a href="{{ route('transaksi.list')}}" class="nav-link">Transaksi</a>
                         </li>
                     </ul>
                 </div>
