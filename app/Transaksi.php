@@ -19,8 +19,8 @@ class Transaksi extends Model
 
     public function konsumen()
     {
-        //return $this->belongsTo('App\Konsumen');
-        return $this->belongsTo('Konsumen::class');
+        return $this->belongsTo('App\Konsumen');
+        //return $this->belongsTo('Konsumen::class');
     }
 
 }

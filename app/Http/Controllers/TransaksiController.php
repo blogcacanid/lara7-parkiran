@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Konsumen;
-use App\Transaksi;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Konsumen;
+use App\Transaksi;
 
 class TransaksiController extends Controller
 {
@@ -16,8 +17,12 @@ class TransaksiController extends Controller
     public function index()
     {
         //
-        //$transaksis = Transaksi::with(['konsumen']);
-        $transaksis = Transaksi::paginate(5);
+        $transaksis = DB::table('transaksi')
+            ->join('konsumen', 'konsumen.id_konsumen', '=', 'transaksi.id_konsumen')
+            ->select('transaksi.id_transaksi','konsumen.nama_konsumen',
+                'transaksi.tgl_transaksi','transaksi.waktu_masuk','transaksi.waktu_keluar',
+                'transaksi.biaya')
+            ->paginate(5);
         return view('transaksi.list', compact('transaksis'));
     }
 
