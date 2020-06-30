@@ -28,7 +28,7 @@
                             <select name="id_konsumen" class="form-control"style="width:250px">
                                 <option value="">--Pilih Konsumen--</option>
                                 @foreach ($konsumens as $data_konsumen)
-                                    <option value="{{ $data_konsumen->id_konsumen }}">{{ $data_konsumen->nama_konsumen}}</option>
+                                    <option value="{{ $data_konsumen->id_konsumen }}">{{ $data_konsumen->nama_konsumen}} - {{ $data_konsumen->jenis_kendaraan}} - {{ $data_konsumen->no_polisi}}</option>
                                 @endforeach
                             </select>
                         </div>
