@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label for="tgl_lahir">Tgl. Lahir:</label>
-                            <input type="text" class="form-control" name="tgl_lahir" value="{{ $data['tgl_lahir'] }}" />
+                            <input type="date" class="form-control" name="tgl_lahir" value="{{ $data['tgl_lahir'] }}" />
                         </div>
                         <div class="form-group">
                             <label for="kelamin">Kelamin:</label>

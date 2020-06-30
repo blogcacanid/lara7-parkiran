@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="card">
-                <div class="card-header"><i class="fas fa-plus-circle"></i>&nbsp;Add Transaksi - Transaksi</div>
+                <div class="card-header"><i class="fas fa-plus-circle"></i>&nbsp;Add Record - Transaksi</div>
                 <div class="card-body" style="font-style: Calibri;font-size:13px">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label for="waktu_masuk">Waktu Masuk:</label>
-                            <input type="time" class="form-control" name="waktu_masuk" value="{{ date('Y-m-d H:i:s') }}" />
+                            <input type="datetime" class="form-control" name="waktu_masuk" value="{{ date('Y-m-d H:i:s') }}" />
                         </div>
                         <a href="{{ route('transaksi.list')}}" class="btn btn-secondary btn-sm" title="Back"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;Back</a>&nbsp;
                         <button type="submit" class="btn btn-success btn-sm" title="Save now"><i class="fas fa-save"></i>&nbsp;Save</button>

@@ -21,7 +21,7 @@
                         @method('POST')
                         <div class="form-group">
                             <label for="nama_konsumen">Name Konsumen:</label>
-                            <input type="text" class="form-control" name="nama_konsumen" />
+                            <input type="text" class="form-control" name="nama_konsumen" placeholder="Enter name" />
                         </div>
                         <div class="form-group">
                             <label for="jenis_kendaraan">Jenis Kendaraan:</label>
@@ -33,11 +33,11 @@
                         </div>
                         <div class="form-group">
                             <label for="no_polisi">No. Polisi:</label>
-                            <input type="text" class="form-control" name="no_polisi" />
+                            <input type="text" class="form-control" name="no_polisi" placeholder="Enter no. pol" />
                         </div>
                         <div class="form-group">
                             <label for="tgl_lahir">Tgl. Lahir:</label>
-                            <input type="text" class="form-control" name="tgl_lahir" />
+                            <input type="date" class="form-control" name="tgl_lahir" value="2000-01-01" />
                         </div>
                         <div class="form-group">
                             <label for="kelamin">Kelamin:</label>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label for="no_hp">No. Hanphone:</label>
-                            <input type="text" class="form-control" name="no_hp" />
+                            <input type="text" class="form-control" name="no_hp" placeholder="Enter no. hp" />
                         </div>
                         <a href="{{ route('konsumen.list')}}" class="btn btn-secondary btn-sm" title="Back"><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;Back</a>&nbsp;
                         <button type="submit" class="btn btn-success btn-sm" title="Save now"><i class="fas fa-save"></i>&nbsp;Save</button>

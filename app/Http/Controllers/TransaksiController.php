@@ -83,16 +83,12 @@ class TransaksiController extends Controller
     {
         //
         $konsumens = Konsumen::all();
-        $data = Transaksi::find($id);
-        //$datas = DB::table('transaksi')
-        //    ->join('konsumen', 'konsumen.id_konsumen', '=', 'transaksi.id_konsumen')
-        //    ->select('transaksi.id_transaksi','konsumen.nama_konsumen',
-        //        'transaksi.tgl_transaksi','transaksi.waktu_masuk','transaksi.waktu_keluar',
-        //        'transaksi.biaya')
-        //    ->where('transaksi.id_transaksi', '=', $id);
-            //->first();
-            //->find($id);
-        //$data = json_encode($data);            
+        //$data = Transaksi::find($id);
+        $data = DB::table('transaksi')
+           ->join('konsumen', 'konsumen.id_konsumen', '=', 'transaksi.id_konsumen')
+           ->select('transaksi.id_transaksi','konsumen.id_konsumen','konsumen.nama_konsumen','konsumen.jenis_kendaraan', 
+                'transaksi.tgl_transaksi','transaksi.waktu_masuk','transaksi.waktu_keluar','transaksi.biaya')
+           ->where('transaksi.id_transaksi', '=', $id)->first();
         return view('transaksi.edit', compact('data','konsumens'));        
     }
 
@@ -117,6 +113,16 @@ class TransaksiController extends Controller
         return redirect('/transaksi')->with('success', 'Record updated!');
     }
 
+    public function delete($id)
+    {
+        //$data = Konsumen::find($id);
+        $data = DB::table('transaksi')
+           ->join('konsumen', 'konsumen.id_konsumen', '=', 'transaksi.id_konsumen')
+           ->select('transaksi.id_transaksi','konsumen.id_konsumen','konsumen.nama_konsumen','konsumen.no_polisi','konsumen.jenis_kendaraan', 
+                'transaksi.tgl_transaksi','transaksi.waktu_masuk','transaksi.waktu_keluar','transaksi.biaya')
+           ->where('transaksi.id_transaksi', '=', $id)->first();
+        return view('transaksi.delete', compact('data'));        
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -126,5 +132,8 @@ class TransaksiController extends Controller
     public function destroy($id)
     {
         //
+        $data = Transaksi::find($id);
+        $data->delete();
+        return redirect('/transaksi')->with('success', 'Record deleted!');
     }
 }
