@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Transaksi;
 
 use Illuminate\Http\Request;
 
@@ -14,6 +15,8 @@ class TransaksiController extends Controller
     public function index()
     {
         //
+        $transaksis = Transaksi::paginate(5);
+        return view('transaksi.list', compact('transaksis'));
     }
 
     /**

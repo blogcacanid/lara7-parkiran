@@ -1,7 +1,7 @@
 @extends('base')
 @section('main')
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12" style="font-style: Calibri;font-size:12px">
         <h3><i class="fas fa-list"></i>&nbsp;List Transaksi</h3>    
         <div>
             <a href="{{ route('transaksi.create')}}" class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i>&nbsp;Add Record</a>
@@ -18,33 +18,37 @@
             <thead>
                 <tr>
                   <th width="90">Actions</th>
-                  <th>NIP</th>
-                  <th>Nama Konsumen</th>
-                  <th>Alamat</th>
+                  <th>Tgl. Transaksi</th>
+                  <th>Konsumen</th>
+                  <th>Waktu Masuk</th>
+                  <th>Waktu Keluar</th>
+                  <th>Biaya</th>
                 </tr>
             </thead>
             <tbody>
-                @if(!empty($datas) && $datas->count())
-                    @foreach($datas as $data)
+                @if(!empty($transaksis) && $transaksis->count())
+                    @foreach($transaksis as $data)
                     <tr>
                         <td>
                             <a href="#" title="View"><span style="font-size: 1em; color: Mediumslateblue;"><i class="fas fa-eye"></i></span></a>&nbsp;
                             <a href="#" title="Edit"><span style="font-size: 1em; color: Dodgerblue;"><i class="fas fa-edit"></i></span></a>&nbsp;
                             <a href="#" title="Delete"><span style="font-size: 1em; color: Tomato;"><i class="fas fa-trash"></span></i></a>
                         </td>
-                        <td>{{$data->nip}}</td>
-                        <td>{{$data->nama_transaksi}}</td>
-                        <td>{{$data->alamat}}</td>
+                        <td>{{$data->tgl_transaksi}}</td>
+                        <td>{{$data->id_konsumen}}</td>
+                        <td>{{$data->waktu_masuk}}</td>
+                        <td>{{$data->waktu_keluar}}</td>
+                        <td>{{$data->waktu_biaya}}</td>
                     </tr>
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="4">No record found...!!!</td>
+                        <td colspan="6">No record found...!!!</td>
                     </tr>
                 @endif
             </tbody>
         </table>
-        {!! $datas->links() !!}
+        {!! $transaksis->links() !!}
     <div>
 </div>
 @endsection
